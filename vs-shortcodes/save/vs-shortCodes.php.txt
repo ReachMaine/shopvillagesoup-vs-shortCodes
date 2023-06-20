@@ -1,0 +1,615 @@
+<?php
+/**
+ * Plugin Name:     VS ShortCodes
+ * Plugin URI:      PLUGIN SITE HERE
+ * Description:     PLUGIN DESCRIPTION HERE
+ * Author:          Ray St. Onge
+ * Text Domain:     vs-shortCodes
+ * Domain Path:     /languages
+ * Version:         0.2.2
+ *
+ * @package         VS_ShortCodes
+ */
+
+// Your code starts here.
+
+
+// register jquery and style on initialization
+add_action('init', 'register_scriptShortCodes');
+function register_scriptShortCodes() {
+//    wp_register_script( 'custom_jquery', plugins_url('/js/custom-jquery.js', __FILE__), array('jquery'), '2.5.1' );
+
+    wp_register_style( 'shortCode_style', plugins_url('/css/shortCodes.css', __FILE__), false, '1.0.0', 'all');
+}
+
+// use the registered jquery and style above
+add_action('wp_enqueue_scripts', 'enqueue_styleShortCodes');
+
+function enqueue_styleShortCodes(){
+   //wp_enqueue_script('custom_jquery');
+
+   wp_enqueue_style( 'shortCode_style' );
+}
+
+function getMyBriefs() {
+    $profile_id = um_profile_id();
+
+    return retrievePosts('brief', um_profile_id());
+
+}
+add_shortcode('myBriefs','getMyBriefs');
+
+function getMyOffers() {
+    $profile_id = um_profile_id();
+
+    return retrievePosts('offer', um_profile_id());
+
+}
+add_shortcode('myOffers','getMyOffers');
+
+function getMyRealEstates() {
+    $profile_id = um_profile_id();
+
+    return retrievePosts('realestate', um_profile_id());
+
+}
+add_shortcode('myRealEstates','getMyRealEstates');
+
+function getAllRealEstatePretty() {
+    $profile_id = um_profile_id();
+
+    return retrievePosts('real_estate');
+
+}
+add_shortcode('allRealEstatePretty','getAllRealEstatePretty');
+
+function getAllRealEstate() {
+    $profile_id = um_profile_id();
+
+    return getPosts('real_estate');
+
+}
+add_shortcode('allRealEstate','getAllRealEstate');
+
+function getHomePageRealEstate() {
+    $profile_id = um_profile_id();
+    $args = array(
+      'post_type'   => 'brief',
+      'post_status' => 'publish',
+      'meta_value' => 1
+    );
+    return retrievePostsCol($args,3,12);
+
+}
+add_shortcode('homePageRealEstate','getHomePageRealEstate');
+
+
+function getAllBriefs2col() {
+    $profile_id = um_profile_id();
+    $args = array(
+      'post_type'   => 'brief',
+      'post_status' => 'publish',
+      'meta_value' => 1
+    );
+    return retrievePostsCol($args,2,10);
+
+}
+add_shortcode('allBriefs2Col','getAllBriefs2col');
+
+function getAllBriefs() {
+    $profile_id = um_profile_id();
+
+    return retrievePosts('brief');
+
+}
+add_shortcode('allBriefs','getAllBriefs');
+
+function getAllOffers() {
+    $profile_id = um_profile_id();
+
+    return retrievePosts('offer');
+
+}
+add_shortcode('allOffers','getAllOffers');
+
+function getAllOffersPretty() {
+    $profile_id = um_profile_id();
+
+    return retrievePostsPretty('offer');
+
+}
+add_shortcode('allOffersPretty','getAllOffersPretty');
+
+function getAllBriefsPretty() {
+    $profile_id = um_profile_id();
+
+    return retrievePostsPretty('brief');
+
+}
+add_shortcode('allBriefsPretty','getAllBriefsPretty');
+
+
+function getAllBriefsKnox() {
+    $args = array(
+      'post_type'   => 'brief',
+      'post_status' => 'publish',
+      'meta_key' => 'publish_on_knox_brief',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allBriefsKnox','getAllBriefsKnox');
+
+function getAllBriefsKnox2Col() {
+    $args = array(
+      'post_type'   => 'brief',
+      'post_status' => 'publish',
+      'meta_key' => 'publish_on_knox_brief',
+      'meta_value' => 1
+    );
+    return retrievePostsCol($args,2,10);
+}
+add_shortcode('allBriefsKnox2Col','getAllBriefsKnox2Col');
+function getAllBriefsWaldo() {
+    $args = array(
+      'post_type'   => 'brief',
+      'post_status' => 'publish',
+      'meta_key' => 'publish_on_waldo_brief',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allBriefsWaldo','getAllBriefsWaldo');
+
+function getAllBriefsWaldo2Col() {
+    $args = array(
+      'post_type'   => 'brief',
+      'post_status' => 'publish',
+      'meta_key' => 'publish_on_waldo_brief',
+      'meta_value' => 1
+    );
+    return retrievePostsCol($args,2,10);
+}
+add_shortcode('allBriefsWaldo2Col','getAllBriefsWaldo2Col');
+
+function getAllOffersKnox() {
+    $args = array(
+      'post_type'   => 'offer',
+      'post_status' => 'publish',
+      'meta_key' => 'publish_on_knox_offer',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allOffersKnox','getAllOffersKnox');
+
+function getAllOffersWaldo() {
+    $args = array(
+      'post_type'   => 'offer',
+      'post_status' => 'publish',
+      'meta_key' => 'publish_on_waldo_offer',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allOffersWaldo','getAllOffersWaldo');
+
+function getAllDiningOffersWaldo() {
+    $args = array(
+      'post_type'   => 'offer',
+      'post_status' => 'publish',
+      'cat'  => 136,
+      'meta_key' => 'publish_on_waldo_offer',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allDiningOffersWaldo','getAllDiningOffersWaldo');
+
+function getAllNonDiningOffersWaldo() {
+    $args = array(
+      'post_type'   => 'offer',
+      'post_status' => 'publish',
+      'category__not_in' => 136,
+      'meta_key' => 'publish_on_waldo_offer',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allNonDiningOffersWaldo','getAllNonDiningOffersWaldo');
+
+function getAllDiningOffersKnox() {
+    $args = array(
+      'post_type'   => 'offer',
+      'post_status' => 'publish',
+      'cat'  => 136,
+      'meta_key' => 'publish_on_knox_offer',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allDiningOffersKnox','getAllDiningOffersKnox');
+
+function getAllNonDiningOffersKnox() {
+    $args = array(
+      'post_type'   => 'offer',
+      'post_status' => 'publish',
+      'category__not_in' => 136,
+      'meta_key' => 'publish_on_knox_offer',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allNonDiningOffersKnox','getAllNonDiningOffersKnox');
+
+function getAllBriefsIslander() {
+    $args = array(
+      'post_type'   => 'brief',
+      'post_status' => 'publish',
+      'meta_key' => 'publish_on_islander_brief',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allBriefsIslander','getAllBriefsIslander');
+
+function getAllOffersIslander() {
+    $args = array(
+      'post_type'   => 'offer',
+      'post_status' => 'publish',
+      'meta_key' => 'publish_on_islander_offer',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allOffersIslander','getAllOffersIslander');
+
+function getAllDiningOffersIslander() {
+    $args = array(
+      'post_type'   => 'offer',
+      'post_status' => 'publish',
+      'cat'  => 136,
+      'meta_key' => 'publish_on_islander_offer',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allDiningOffersIslander','getAllDiningOffersIslander');
+
+function getAllNonDiningOffersIslander() {
+    $args = array(
+      'post_type'   => 'offer',
+      'post_status' => 'publish',
+      'category__not_in' => 136,
+      'meta_key' => 'publish_on_islander_offer',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allNonDiningOffersIslander','getAllNonDiningOffersIslander');
+
+function getAllBriefsEA() {
+    $args = array(
+      'post_type'   => 'brief',
+      'post_status' => 'publish',
+      'meta_key' => 'publish_on_ea_brief',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allBriefsEA','getAllBriefsEA');
+
+function getAllOffersEA() {
+    $args = array(
+      'post_type'   => 'offer',
+      'post_status' => 'publish',
+      'meta_key' => 'publish_on_ea_offer',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allOffersEA','getAllOffersEA');
+
+function getAllDiningOffersEA() {
+    $args = array(
+      'post_type'   => 'offer',
+      'post_status' => 'publish',
+      'cat'  => 136,
+      'meta_key' => 'publish_on_ea_offer',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allDiningOffersEA','getAllDiningOffersEA');
+
+function getAllNonDiningOffersEA() {
+    $args = array(
+      'post_type'   => 'offer',
+      'post_status' => 'publish',
+      'category__not_in' => 136,
+      'meta_key' => 'publish_on_ea_offer',
+      'meta_value' => 1
+    );
+    return getPosts($args);
+}
+add_shortcode('allNonDiningOffersEA','getAllNonDiningOffersEA');
+
+
+
+## retrieves posts based on paramaters given.
+# @param1 = post type (brief, offer, realestate)
+# @param2 = user id number (use um_profile_id() to get current profile being viewed. pass nothing for all posts)
+function retrievePosts($type, $uid = 0){
+
+  $args = array();
+  if ($uid){
+    $args = array(
+      'post_type'   => $type,
+      'post_status' => 'publish',
+      'author'     => $uid
+    );
+  } else {
+    $args = array(
+      'post_type'   => $type,
+      'post_status' => 'publish'
+    );
+  }
+  return retrievePostsPretty($type,$uid);
+  //return getPosts($args,$uid);
+}
+
+
+function getPosts($args,$uid = 0){
+  ob_start();
+?>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clamp-js/0.7.0/clamp.min.js" integrity="sha512-Zf7q41OZ49XVIFrkbCVLkBEklVxQv4sVdMGnCwL9bfuCfA862QmAJSU61yrcrMwze7Ij7oUXpQVoUXmftBfk0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  $(document).ready(function(){
+    var clampable = $( ".headline-iframe" );
+    var arrayLength = clampable.length;
+    for (var i = 0; i < arrayLength; i++) {
+      $clamp(clampable[i], {
+        clamp:4
+      });
+    }
+    $( "#comments" ).remove();
+  });
+</script>
+<div class = 'wrapper-iframe'>
+<?php
+  $args['posts_per_page'] =5;
+  $cpt_query = new WP_Query($args);
+  if ($cpt_query->have_posts()) { while ($cpt_query->have_posts()) : $cpt_query->the_post();
+
+
+      $authorID = um_get_display_name( get_the_author() );
+      echo '<li class = "post-item-iframe">';
+      echo '<div class = "thumbnail-iframe"><a href="';
+      echo the_permalink();
+      echo '">';
+      if ( has_post_thumbnail()) {
+        the_post_thumbnail( array(156, 156), ['class' => 'prettyThumbnail'] );
+      }
+      else{
+        um_fetch_user( get_the_author_meta( 'ID' ) );
+        echo um_user('profile_photo',100);
+      }
+      echo '</a></div>';
+      echo '<div class = "text-iframe"><h2><a class = "headline-iframe" href="';
+      echo the_permalink();
+      echo '" target="_blank">';
+      echo the_title();
+      echo '</a></h2>';
+      //$authorID = um_get_display_name( get_the_author() );
+      echo '<div class = "byline-iframe">';
+     // echo '<div class="river-date"><div class="time">';
+      echo get_the_date();
+    //  echo '</div> | ';
+      echo ' | By ';
+      echo get_the_author_meta('bizName', $authorID) . '</div></div>';
+     // echo '</div>';
+      echo '</li>';
+      echo '<hr/>';
+
+      endwhile;
+      echo '</div>';
+    }
+  else
+    {
+      $postType = "Briefs";
+      if ($args['post_type'] == 'offer')
+      {
+        $postType = "Offers";
+      }
+      else {
+        if ($args['post_type'] == 'real_estate')
+        {
+          $postType = "Real Estate posts";
+        }
+      }
+      echo "No ".$postType." were found";
+    }
+   return ob_get_clean();
+};
+
+function retrievePostsCol($args,$numCols=2,$maxPosts=10){
+  ob_start();
+  $args['posts_per_page']= $maxPosts;
+
+?>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clamp-js/0.7.0/clamp.min.js" integrity="sha512-Zf7q41OZ49XVIFrkbCVLkBEklVxQv4sVdMGnCwL9bfuCfA862QmAJSU61yrcrMwze7Ij7oUXpQVoUXmftBfk0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  $(document).ready(function(){
+    var clampable = $( ".headline-iframe" );
+    var arrayLength = clampable.length;
+    for (var i = 0; i < arrayLength; i++) {
+      $clamp(clampable[i], {
+        clamp:4
+      });
+    }
+    $( "#comments" ).remove();
+  });
+</script>
+<div class = 'wrapper-iframe-multiCol<?php echo $numCols;?>'>
+<?php
+  //$args['posts_per_page'] =10;
+  $cnt = 1;
+  $column = 1;
+  $maxPerCol = $maxPosts/$numCols;
+  $cpt_query = new WP_Query($args);
+  if ($cpt_query->have_posts()) { while ($cpt_query->have_posts()) : $cpt_query->the_post();
+
+
+      if ($cnt == 1)
+      {
+        echo '<div class="column'.$column.'">';
+        $column++;
+      }
+      $authorID = um_get_display_name( get_the_author() );
+      echo '<li class = "post-item-iframe">';
+      echo '<div class = "thumbnail-iframe"><a href="';
+      echo the_permalink();
+      echo '">';
+      if ( has_post_thumbnail()) {
+        the_post_thumbnail( array(156, 156), ['class' => 'prettyThumbnail'] );
+      }
+      else{
+        um_fetch_user( get_the_author_meta( 'ID' ) );
+        echo um_user('profile_photo',100);
+      }
+      echo '</a></div>';
+      echo '<div class = "text-iframe"><h2><a class = "headline-iframe" href="';
+      echo the_permalink();
+      echo '" target="_blank">';
+      echo the_title();
+      echo '</a></h2>';
+      //$authorID = um_get_display_name( get_the_author() );
+      echo '<div class = "byline-iframe">';
+     // echo '<div class="river-date"><div class="time">';
+      echo get_the_date();
+    //  echo '</div> | ';
+      echo ' | By ';
+      echo get_the_author_meta('bizName', $authorID) . '</div></div>';
+     // echo '</div>';
+      echo '</li>';
+      echo '<hr/>';
+      if ($cnt == $maxPerCol)
+      {
+        echo '</div>';
+        $cnt =0;
+      }
+      $cnt++;
+
+
+      endwhile;
+      echo '</div>';
+    }
+  else
+    {
+      $postType = "Briefs";
+      if ($args['post_type'] == 'offer')
+      {
+        $postType = "Offers";
+      }
+      else {
+        if ($args['post_type'] == 'real_estate')
+        {
+          $postType = "Real Estate posts";
+        }
+      }
+      echo "No ".$postType." were found";
+    }
+   return ob_get_clean();
+};
+
+function retrievePostsPretty($type,$uid=0){
+   ob_start();
+
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    if ($uid)
+    {
+      $args = array(
+          'posts_per_page' => 10,
+          'post_status' => 'publish',
+          'paged' => $paged,
+          'post_type' => $type,
+          'author'     => $uid
+      );
+    }
+    else {
+
+        $args = array(
+            'posts_per_page' => 10,
+            'post_status' => 'publish',
+            'paged' => $paged,
+            'post_type' => $type
+        );
+    }
+
+
+
+    $cpt_query = new WP_Query($args);
+
+  if ($cpt_query->have_posts()) : while ($cpt_query->have_posts()) : $cpt_query->the_post();
+
+        echo '<li class = "post-item">';
+        echo '<div class="river-date"> Published <div class="time">';
+        echo get_the_date();
+        echo '</div></div>';
+        echo '<a href="';
+        echo the_permalink();
+        echo '">';
+        //the_post_thumbnail( array(156, 156), ['class' => 'prettyThumbnail'] );
+        if ( has_post_thumbnail()) {
+        the_post_thumbnail( array(156, 156), ['class' => 'prettyThumbnail'] );
+        }
+        else{
+          um_fetch_user( get_the_author_meta( 'ID' ) );
+          echo um_user('profile_photo',100);
+        }
+        echo '</a>';
+        echo '<h2><a href="';
+        echo the_permalink();
+        echo '">';
+        echo the_title();
+        echo '</a></h2>';
+        $authorID = um_get_display_name( get_the_author() );
+        if (!$uid)
+        {
+
+          um_fetch_user($authorID);
+          echo '<div class = "byline-all">By ';
+          echo '<a href="/user/'.get_the_author_meta('um_user_profile_url_slug_name_dash', $authorID).'">';
+          echo get_the_author_meta('bizName', $authorID) . '</a></div>';
+        }
+       /* else {
+          echo '<div class = "byline-all">By ' . get_the_author_meta('bizName', $authorID) . '</div>';
+        }
+  */
+        the_excerpt();
+        echo '</li>';
+        echo '<hr/>';
+        endwhile; endif; ?>
+
+<nav>
+    <div>
+        <div><?php previous_posts_link( '&laquo; Back...', $cpt_query->max_num_pages) ?></div>
+        <div><?php next_posts_link( 'More... &raquo;', $cpt_query->max_num_pages) ?></div>
+    </div>
+</nav>
+<?php
+  return ob_get_clean();
+};?>
+<?php
+function getProfileURL($authorID){
+  return '/user/'.get_the_author_meta('um_user_profile_url_slug_name_dash', $authorID);
+}
+function reformatMagicDate($magicDate){
+  $parts = explode(" ", $magicDate);
+  $dateRaw = date_create($parts[0]);
+  $dateFormatted = date_format($dateRaw,"F d, Y");
+  return $dateFormatted;
+}
+?>
