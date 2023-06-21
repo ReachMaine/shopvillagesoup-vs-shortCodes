@@ -185,9 +185,6 @@ function getVSPosts($attr) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">';
       $page = $page.'<link rel="stylesheet" id="shortCode_style-css"  href="https://shop.villagesoup.com/wp-content/plugins/vs-shortCodes/css/shortCodes.css?x='.$cachingKey.'" media="all" />';
-
-
-
 	    $page = $page.'</head>';
 
 			$page = $page.'<body class="'.$className.'">';
@@ -852,14 +849,14 @@ function retrievePostsPretty($type,$uid=0){
         {
           um_fetch_user($authorID);
           echo '<div class = "byline-all">By ';
-          echo '<a href="/user/'.get_the_author_meta('um_user_profile_url_slug_name_dash', $authorID).'">';
+          echo '<a href="'.get_home_url().'/user/'.get_the_author_meta('um_user_profile_url_slug_name_dash', $authorID).'">';
           echo get_the_author_meta('bizName', $authorID) . '</a></div>';
         }
 
         the_excerpt();
         echo '</li>';
         echo '<hr/>';
-      endwhile;
+      endwhile;=
     } else {
       if ($uid) { //Display a "No X found." if there is an author with none of the post type.
         switch ($type) {
