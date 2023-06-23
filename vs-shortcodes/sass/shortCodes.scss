@@ -1,6 +1,14 @@
+//A collection of "Custom Color" variables
+$cc_blue : #015aac;
+$cc_dark_blue : #04378e;
+$cc_link_color : #04378e;
+$cc_vs_orange : #f18f00;
+$cc_light_grey : #ddd;
+$cc_dark_grey : #565656;
 
 /* search bar fix for bug caused by Plausible tracker widget covering with invisible divs */
-.um-page-members #block-8, .um-page-members #block-9 {
+.um-page-members #block-8, 
+.um-page-members #block-9 {
   display: none;
 }
 
@@ -18,7 +26,6 @@
 			.river-date {
 				font-size: 12px;
 				font-weight: 400;
-				color: black;
 				margin-bottom: 5px;
 			}
 			
@@ -26,7 +33,6 @@
 	}
 	a {
 		text-decoration: none;
-		color: #000;
 		margin-top: 5px;
 		margin-bottom: 0;
 		font-size: 24px;
@@ -50,7 +56,6 @@
 			.river-date {
 				font-size: 12px;
 				font-weight: 400;
-				color: black;
 				margin-bottom: 5px;
 			}
 			
@@ -58,7 +63,6 @@
 	}
 	a {
 		text-decoration: none;
-		color: #000;
 		margin-top: 5px;
 		margin-bottom: 0;
 		font-size: 24px;
@@ -67,7 +71,7 @@
 		font-size: 16px;
 	}
 }
-
+//238 : Briefs | 240 : Offers
 .page-id-238,
 .page-id-240 {
 	.col-full {
@@ -78,7 +82,6 @@
 	.entry-content {
 		a {
 			text-decoration: none;
-			color: #000;
 			margin-top: 5px;
 			margin-bottom: 0;
 			font-size: 24px;
@@ -88,12 +91,11 @@
 		.byline-all {
 			a {
 				font-size: 16px;
-				color: #6e6e6e;
 			}
 		}
 	}
 }
-
+// 1757 : Latest Knox Briefs iFrame Columns
 .page-id-1757 {
 	#post-1757 {
 		.post-item-iframe {
@@ -101,7 +103,6 @@
 			.river-date {
 				font-size: 12px;
 				font-weight: 400;
-				color: black;
 				margin-bottom: 5px;
 			}
 		}
@@ -114,49 +115,8 @@
 	}
 	a {
 		font-size: 16px;
-		color: #6e6e6e;
 	}
 }
-
-/*styling for briefs and offers 
-.page-id-144 #post-144 .post-item-iframe h2 a, .page-id-176 #post-176 .post-item-iframe h2 a, .page-id-1757 #post-1757 .post-item-iframe h2 a {
-	font-size: 18px;
-	line-height: 18px;
-	font-weight: 600;
-}
-.page-id-176 #post-176 .post-item-iframe .byline-iframe, .page-id-176 #post-176 .post-item-iframe .river-date, .page-id-144 #post-144 .post-item-iframe .byline-iframe, .page-id-144 #post-144 .post-item-iframe .river-date, .page-id-1757 #post-1757 .post-item-iframe .byline-iframe, .page-id-1757 #post-1757 .post-item-iframe .river-date  {
-	font-size: 12px;
-	font-weight: 400;
-	color: black;
-	margin-bottom: 5px;
-}
-
-.page-id-1757 .column1, .page-id-1757 .column2 {
-	max-width: 362px;
-	float: left;
-	border: 1px solid #00000054;
-}
-
-.page-id-238 .col-full, .page-id-240 .col-full {
-	max-width: 656px;
-	border: 0px;
-	box-shadow: none;
-}
-.page-id-238 .entry-content a, .page-id-240 .entry-content a, .page-id-144 a, .page-id-176 a, .page-id-1757 a {
-	text-decoration: none;
-	color: #000;
-	margin-top: 5px;
-    margin-bottom: 0;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 30px;
-}
-
-.page-id-238 .entry-content .byline-all a, .page-id-240 .entry-content .byline-all a, .page-id-144 a, .page-id-176 a, .page-id-1757 a {
-  	font-size: 16px;
-	color: #6e6e6e;
-}
-*/
 
 /* post list styling */
 .post-item {
@@ -172,8 +132,7 @@
 	padding-top: 16px;
 	overflow: hidden;
 	list-style: none;
-	border-bottom: solid #e1e1e1 1px;
-	font-family: Lusitana,serif;
+	//border-bottom: solid #e1e1e1 1px;
 
 	//river-date : the 'Published' on each post item
 	.river-date { 
@@ -184,22 +143,18 @@
 		padding: 2px;
 		-webkit-transition-duration: .25s;
 		transition-duration: .25s;
-		font-family: "Open sans",sans-serif;
 		font-size: 11px;
 		font-weight: 400;
 		letter-spacing: 1px;
 		text-transform: uppercase;
-		color: #222;
 	}
 	//time : the post item's time of publication, under the river-date
-	.time { 
+	.time {
 		padding-bottom: 0;
-		font-family: "Open sans",sans-serif;
 		font-size: 11px;
 		font-weight: 400;
 		letter-spacing: 1px;
 		text-transform: uppercase;
-		color: #222;
 	}
 	a:first-of-type {
 		grid-area: 3/1;
@@ -219,11 +174,10 @@
 	}
 	//h2 : the post item's title
 	h2 {
-		margin-top: 0;
+		margin-top: 0px;
 		margin-left: 10px;
-		margin-bottom: 10px;
+		margin-bottom: 4px;
 		font-size: 24px;
-		font-weight: 400;
 		line-height: 30px;
 		a {
 			grid-area: 2/1;
@@ -238,7 +192,6 @@
 		margin-bottom: 0;
 		font-size: 18px;
 		line-height: 22px;
-		color: #000;
 		overflow: hidden;
 	}
 	//byline-all : the built-in by line on the post item
@@ -361,77 +314,6 @@ hr {
 
 */
 
-/* classifieds styling */
-.classifiedWrapper {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-}
-.classDisplayAd, .classLinerAd {
-	width: 300px;
-	margin-bottom: 30px;
-	height: 300px;
-}
-.classLinerAd {
-	padding: 15px;
-	border: 3px solid black;
-	padding: 15px;
-	border-radius: 3px;
-}
-.classLinerAd a {
-	text-decoration: none !important;
-	color: black;
-	font-weight: 800;
-}
-.classifiedIntructions {
-	border: 3px solid black;
-	padding: 15px;
-	margin: 15px 42px;
-	color: black;
-}
-/*
-.page-id-559 .entry-title {
-	margin: 15px;
-}
-*/
-.classifiedsNextButton a, .classifiedsPreviousButton a {
-	background:linear-gradient(to bottom, #f68e1f 5%, #f0b06c 100%);
-	background-color:#f68e1f;
-	border-radius:28px;
-	border:1px solid #f5bb7d;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:16px;
-	font-weight:bold;
-	padding:10px 17px;
-	text-decoration:none;
-}
-.classifiedsNextButton:hover a, .classifiedsPreviousButton:hover a {
-	background:linear-gradient(to bottom, #f0b06c 5%, #f68e1f 100%);
-	background-color:#f0b06c;
-}
-.classifiedsNextButton:active a, .classifiedsPreviousButton:active a {
-	position:relative;
-	top:1px;
-}
-.classifiedsNextButton a {
-	float: right;
-	margin-right: 42px;
-}
-.classifiedsPreviousButton a {
-	float: left;
-	margin-left: 42px;
-}
-nav .classifiedsNextButton a, nav .classifiedsPreviousButton a {
-	text-decoration: none !important;
-	color: white;
-}
-.page-id-559 article {
-	margin-bottom: -42px;
-}
-
 #comments {
 	display: none;
 }
@@ -464,7 +346,7 @@ nav .classifiedsNextButton a, nav .classifiedsPreviousButton a {
 	z-index: 100000;
 }
 .page-id-13 .um-col-alt .um-left input {
-	background: #f68f1f;
+	background: $cc_vs_orange;
 	width: unset !important;
 }
 .page-id-13 .um-col-alt .um-right a {
@@ -472,7 +354,8 @@ nav .classifiedsNextButton a, nav .classifiedsPreviousButton a {
     color: white;
 	width: unset !important;
 }
-.page-id-13 .um-col-alt .um-right, .page-id-13 .um-col-alt .um-left {
+.page-id-13 .um-col-alt .um-right, 
+.page-id-13 .um-col-alt .um-left {
 	width: unset !important;
 }
 
@@ -562,11 +445,7 @@ nav .classifiedsNextButton a, nav .classifiedsPreviousButton a {
 }
 */
 
-/* hide titles and gap 
-.entry-title {
-	display: none;
-}
-
+/* 
 .header-widget-region {
 	margin-bottom: 119px;
 }
@@ -581,42 +460,5 @@ nav .classifiedsNextButton a, nav .classifiedsPreviousButton a {
 }
 .single .entry-title {
 	display: initial !important;
-}
-*/
-
-/* brief/offer styling: serif text, bigger text on body, text-color: black, serif headlines 
-
-.single-offer,
-.single-brief {
-    font-family: serif;
-    margin-bottom: 1px !important;
-
-    .has-text-align-center {
-        color:black;
-        font-size: 1.2em;
-    }
-    figcaption {
-        color: black;
-    }
-}
-*/
-
-/*
-.single-offer .entry-header, .single-brief .entry-header {
-	margin-bottom: 1px !important;
-}
-
-.single-offer .entry-header, .single-brief .entry-header {
-  font-family: serif;
-}
-
-.single-offer .has-text-align-center, .single-brief .has-text-align-center {
-	font-family: serif;
-	color: black;
-	font-size: 1.2em
-}
-.single-offer figcaption, .single-brief figcaption {
-	color: black;
-	font-family: serif;
 }
 */

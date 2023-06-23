@@ -4,7 +4,7 @@ Tags: shortCodes
 Requires at least: 4.5
 Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 1.7.1
+Stable tag: 1.7.2
 
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -44,7 +44,10 @@ retrievePostsPretty()      : Retrieves posts of a certain type and displays them
 
 
 == Changelog ==
-<<<<<<<
+= 1.7.2
+* Added SCSS support
+* Added .get_home_url() before brief and offer byline <a> echos allowing for more dynamic website file structure
+* Removed a large number of dependencies and theme overwrittes
 
 = 1.7.0
 * Added header info to try and force the pages not to cached
@@ -53,15 +56,6 @@ retrievePostsPretty()      : Retrieves posts of a certain type and displays them
 * The check for the cached file was occurring and it is possible the file would not exist if caching was never turned on.
   Added a check to see if caching is enabled before testing for the cached file
 
-=======
-= 1.7.0
-* Added header info to try and force the pages not to cached
-
-= 1.6.2
-* The check for the cached file was occurring and it is possible the file would not exist if caching was never turned on.
-  Added a check to see if caching is enabled before testing for the cached file
-
->>>>>>>
 = 1.6.1
 * fixed typo when checking for post_status, had published instead of publish
 

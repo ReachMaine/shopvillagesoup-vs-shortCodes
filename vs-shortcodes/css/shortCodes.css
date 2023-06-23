@@ -1,5 +1,6 @@
 /* search bar fix for bug caused by Plausible tracker widget covering with invisible divs */
-.um-page-members #block-8, .um-page-members #block-9 {
+.um-page-members #block-8,
+.um-page-members #block-9 {
   display: none;
 }
 
@@ -12,12 +13,10 @@
 .page-id-144 #post-144 .post-item-iframe .river-date {
   font-size: 12px;
   font-weight: 400;
-  color: black;
   margin-bottom: 5px;
 }
 .page-id-144 a {
   text-decoration: none;
-  color: #000;
   margin-top: 5px;
   margin-bottom: 0;
   font-size: 24px;
@@ -35,12 +34,10 @@
 .page-id-176 #post-176 .post-item-iframe .river-date {
   font-size: 12px;
   font-weight: 400;
-  color: black;
   margin-bottom: 5px;
 }
 .page-id-176 a {
   text-decoration: none;
-  color: #000;
   margin-top: 5px;
   margin-bottom: 0;
   font-size: 24px;
@@ -58,7 +55,6 @@
 .page-id-238 .entry-content a,
 .page-id-240 .entry-content a {
   text-decoration: none;
-  color: #000;
   margin-top: 5px;
   margin-bottom: 0;
   font-size: 24px;
@@ -68,14 +64,12 @@
 .page-id-238 .entry-content .byline-all a,
 .page-id-240 .entry-content .byline-all a {
   font-size: 16px;
-  color: #6e6e6e;
 }
 
 .page-id-1757 #post-1757 .post-item-iframe .byline-all,
 .page-id-1757 #post-1757 .post-item-iframe .river-date {
   font-size: 12px;
   font-weight: 400;
-  color: black;
   margin-bottom: 5px;
 }
 .page-id-1757 .column1,
@@ -86,7 +80,6 @@
 }
 .page-id-1757 a {
   font-size: 16px;
-  color: #6e6e6e;
 }
 
 /*styling for briefs and offers 
@@ -139,8 +132,6 @@
   padding-top: 16px;
   overflow: hidden;
   list-style: none;
-  border-bottom: solid #e1e1e1 1px;
-  font-family: Lusitana, serif;
 }
 .post-item .river-date {
   float: left;
@@ -150,21 +141,17 @@
   padding: 2px;
   -webkit-transition-duration: 0.25s;
   transition-duration: 0.25s;
-  font-family: "Open sans", sans-serif;
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #222;
 }
 .post-item .time {
   padding-bottom: 0;
-  font-family: "Open sans", sans-serif;
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #222;
 }
 .post-item a:first-of-type {
   grid-area: 3/1;
@@ -182,11 +169,10 @@
   margin-top: -33px;
 }
 .post-item h2 {
-  margin-top: 0;
+  margin-top: 0px;
   margin-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   font-size: 24px;
-  font-weight: 400;
   line-height: 30px;
 }
 .post-item h2 a {
@@ -200,7 +186,6 @@
   margin-bottom: 0;
   font-size: 18px;
   line-height: 22px;
-  color: #000;
   overflow: hidden;
 }
 .post-item .byline-all {
@@ -321,88 +306,153 @@ hr {
 }
 
 */
-/* classifieds styling */
+/* classifieds styling 
 .classifiedWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
 }
 
-.classDisplayAd, .classLinerAd {
-  width: 300px;
-  margin-bottom: 30px;
-  height: 300px;
-}
-
+//.classLinerAd - Classifieds made completely out of text and border
 .classLinerAd {
-  padding: 15px;
-  border: 3px solid black;
-  padding: 15px;
-  border-radius: 3px;
+	height:300px;
+	width: 300px;
+	margin-bottom: 30px;
+	padding: 15px;
+	border: 1px solid $cc_light_grey;
+	a {
+		color: black;
+		text-decoration: none !important;
+	}
 }
-
-.classLinerAd a {
-  text-decoration: none !important;
-  color: black;
-  font-weight: 800;
+//.classDisplayAd - Classifides made out of an embeded file
+.classDisplayAd {
+	height: 300px;
+	width: 300px;
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: center;
 }
 
 .classifiedIntructions {
-  border: 3px solid black;
-  padding: 15px;
-  margin: 15px 42px;
-  color: black;
+	background-color: $cc_blue;
+	color: white;
+	text-align: center;
+	padding: 15px;
+	margin: 15px 42px;
+
 }
 
+*/
 /*
+.classDisplayAd, .classLinerAd {
+	width: 300px;
+	margin-bottom: 30px;
+	height: 300px;
+}
+
+.classLinerAd {
+	padding: 15px;
+	border: 1px solid $cc_light_grey;
+	padding: 15px;
+}
+.classLinerAd a {
+	text-decoration: none !important;
+	font-weight: 800;
+}
+
 .page-id-559 .entry-title {
 	margin: 15px;
 }
 */
-.classifiedsNextButton a, .classifiedsPreviousButton a {
-  background: linear-gradient(to bottom, #f68e1f 5%, #f0b06c 100%);
-  background-color: #f68e1f;
-  border-radius: 28px;
-  border: 1px solid #f5bb7d;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px 17px;
-  text-decoration: none;
+/*
+.classifiedsNextButton {
+	a {
+		background: $cc_dark_grey;
+		border:1px solid white;
+		display:inline-block;
+		cursor:pointer;
+		color:#ffffff;
+		font-size:16px;
+		padding:10px 17px;
+		text-decoration:none;
+		margin-right: 42px;
+	}
+	:hover a {
+		background: $cc_vs_orange;
+		border-color: $cc_vs_orange;
+	}
+	:active a {
+		position: relative;
+		top: 1px;
+	}
+}
+
+.classifiedsPreviousButton {
+	a {
+		background: $cc_dark_grey;
+		border:1px solid white;
+		display:inline-block;
+		cursor:pointer;
+		color:#ffffff;
+		font-size:16px;
+		padding:10px 17px;
+		text-decoration:none;
+		margin-left: 42px;
+	}
+	:hover a {
+		background: $cc_vs_orange;
+		border-color: $cc_vs_orange;
+	}
+	:active a {
+		position: relative;
+		top: 1px;
+	}
+}
+
+
+.classifiedsNextButton a, 
+.classifiedsPreviousButton a {
+	background: $cc_dark_grey;
+	border:1px solid white;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:16px;
+	padding:10px 17px;
+	text-decoration:none;
+	:hover {
+		background: $cc_vs_orange;
+		border-color: $cc_vs_orange;
+	}
 }
 
 .classifiedsNextButton:hover a, .classifiedsPreviousButton:hover a {
-  background: linear-gradient(to bottom, #f0b06c 5%, #f68e1f 100%);
-  background-color: #f0b06c;
+	background:linear-gradient(to bottom, #f0b06c 5%, #f68e1f 100%);
+	background-color:#f0b06c;
 }
-
 .classifiedsNextButton:active a, .classifiedsPreviousButton:active a {
-  position: relative;
-  top: 1px;
+	position:relative;
+	top:1px;
 }
-
 .classifiedsNextButton a {
-  float: right;
-  margin-right: 42px;
+	float: right;
+	margin-right: 42px;
+}
+.classifiedsPreviousButton a {
+	float: left;
+	margin-left: 42px;
 }
 
-.classifiedsPreviousButton a {
-  float: left;
-  margin-left: 42px;
-}
 
 nav .classifiedsNextButton a, nav .classifiedsPreviousButton a {
-  text-decoration: none !important;
-  color: white;
+	text-decoration: none !important;
+	color: white;
 }
-
 .page-id-559 article {
-  margin-bottom: -42px;
+	margin-bottom: -42px;
 }
-
+*/
 #comments {
   display: none;
 }
@@ -437,7 +487,7 @@ nav .classifiedsNextButton a, nav .classifiedsPreviousButton a {
 }
 
 .page-id-13 .um-col-alt .um-left input {
-  background: #f68f1f;
+  background: #f18f00;
   width: unset !important;
 }
 
@@ -447,7 +497,8 @@ nav .classifiedsNextButton a, nav .classifiedsPreviousButton a {
   width: unset !important;
 }
 
-.page-id-13 .um-col-alt .um-right, .page-id-13 .um-col-alt .um-left {
+.page-id-13 .um-col-alt .um-right,
+.page-id-13 .um-col-alt .um-left {
   width: unset !important;
 }
 
@@ -528,11 +579,7 @@ nav .classifiedsNextButton a, nav .classifiedsPreviousButton a {
 	box-shadow: 7px 8px 15px 0px #4a464691;
 }
 */
-/* hide titles and gap 
-.entry-title {
-	display: none;
-}
-
+/* 
 .header-widget-region {
 	margin-bottom: 119px;
 }
@@ -547,41 +594,6 @@ nav .classifiedsNextButton a, nav .classifiedsPreviousButton a {
 }
 .single .entry-title {
 	display: initial !important;
-}
-*/
-/* brief/offer styling: serif text, bigger text on body, text-color: black, serif headlines 
-
-.single-offer,
-.single-brief {
-    font-family: serif;
-    margin-bottom: 1px !important;
-
-    .has-text-align-center {
-        color:black;
-        font-size: 1.2em;
-    }
-    figcaption {
-        color: black;
-    }
-}
-*/
-/*
-.single-offer .entry-header, .single-brief .entry-header {
-	margin-bottom: 1px !important;
-}
-
-.single-offer .entry-header, .single-brief .entry-header {
-  font-family: serif;
-}
-
-.single-offer .has-text-align-center, .single-brief .has-text-align-center {
-	font-family: serif;
-	color: black;
-	font-size: 1.2em
-}
-.single-offer figcaption, .single-brief figcaption {
-	color: black;
-	font-family: serif;
 }
 */
 

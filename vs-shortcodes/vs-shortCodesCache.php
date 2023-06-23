@@ -185,6 +185,9 @@ function getVSPosts($attr) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">';
       $page = $page.'<link rel="stylesheet" id="shortCode_style-css"  href="https://shop.villagesoup.com/wp-content/plugins/vs-shortCodes/css/shortCodes.css?x='.$cachingKey.'" media="all" />';
+
+
+
 	    $page = $page.'</head>';
 
 			$page = $page.'<body class="'.$className.'">';
@@ -856,7 +859,7 @@ function retrievePostsPretty($type,$uid=0){
         the_excerpt();
         echo '</li>';
         echo '<hr/>';
-      endwhile;=
+      endwhile;
     } else {
       if ($uid) { //Display a "No X found." if there is an author with none of the post type.
         switch ($type) {
