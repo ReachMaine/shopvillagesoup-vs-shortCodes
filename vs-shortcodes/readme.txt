@@ -4,7 +4,7 @@ Tags: shortCodes
 Requires at least: 4.5
 Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 1.7.2
+Stable tag: 1.8.0
 
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -44,6 +44,10 @@ retrievePostsPretty()      : Retrieves posts of a certain type and displays them
 
 
 == Changelog ==
+=1.8.0
+* Removed all CSS & SCSS to be moved into the child theme
+* Removed the arrows from "More... >>" & "<< Back..." on Brief & Offer pages
+
 = 1.7.2
 * Added SCSS support
 * Added .get_home_url() before brief and offer byline <a> echos allowing for more dynamic website file structure

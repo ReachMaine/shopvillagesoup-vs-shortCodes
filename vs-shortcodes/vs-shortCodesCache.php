@@ -5,7 +5,7 @@
  * Author:          Ray St. Onge
  * Text Domain:     vs-shortCodes
  * Domain Path:     /languages
- * Version:         1.7.1
+ * Version:         1.8.0
  *
  * @package         VS_ShortCodes_Caching
  */
@@ -820,17 +820,13 @@ function retrievePostsPretty($type,$uid=0){
         );
     }
 
-
-
     $cpt_query = new WP_Query($args);
 
   if ($cpt_query->have_posts()) { while ($cpt_query->have_posts()) : $cpt_query->the_post();
-
         echo '<li class = "post-item">';
-        echo '<div class="river-date"> Published <div class="time">';
-        echo get_the_date();
+        echo '<div><div>';
         echo '</div></div>';
-        echo '<a href="';
+        echo '<a class="post-thumbnail" href="';
         echo the_permalink();
         echo '">';
         //the_post_thumbnail( array(156, 156), ['class' => 'prettyThumbnail'] );
@@ -853,9 +849,11 @@ function retrievePostsPretty($type,$uid=0){
           um_fetch_user($authorID);
           echo '<div class = "byline-all">By ';
           echo '<a href="'.get_home_url().'/user/'.get_the_author_meta('um_user_profile_url_slug_name_dash', $authorID).'">';
-          echo get_the_author_meta('bizName', $authorID) . '</a></div>';
+          echo get_the_author_meta('bizName', $authorID) . '</a>';
+          echo ' | Published ';
+          echo get_the_date();
+          echo '</div>';
         }
-
         the_excerpt();
         echo '</li>';
         echo '<hr/>';
@@ -877,13 +875,12 @@ function retrievePostsPretty($type,$uid=0){
         }
       }
     }
-
        ?>
 
 <nav>
-    <div>
-        <div><?php previous_posts_link( '&laquo; Back...', $cpt_query->max_num_pages) ?></div>
-        <div><?php next_posts_link( 'More... &raquo;', $cpt_query->max_num_pages) ?></div>
+    <div class="brief-offer-nav-buttons">
+        <div class="brief-offer-back-button"><?php previous_posts_link( '&laquo; Back', $cpt_query->max_num_pages) ?></div>
+        <div class="brief-offer-more-button"><?php next_posts_link( 'More &raquo; ', $cpt_query->max_num_pages) ?></div>
     </div>
 </nav>
 <?php
