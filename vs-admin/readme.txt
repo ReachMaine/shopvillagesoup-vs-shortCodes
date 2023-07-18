@@ -17,7 +17,7 @@ detailed description of what each section of the plugin controls.
 
   TOOLBAR
 +the 'Visit Company Page' tab to the existing 'Shop VillageSoup' section which redirects to the user's bizProfile
-+the 'Mange Posts' menus which redirects the user to their management section of the post type, it also filters based on user role
++the 'Manage Posts' menus which redirects the user to their management section of the post type, it also filters based on user role
 
   DASHBOARD MENU
 +the 'Company Page' tab which redirects to the user's bizProfile
