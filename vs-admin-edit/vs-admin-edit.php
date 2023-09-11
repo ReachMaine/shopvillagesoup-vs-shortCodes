@@ -79,14 +79,14 @@ function vs_toolbar_manage_posts($admin_bar) {
   $admin_bar->add_menu( array(
     'title' => 'Manage Posts',
     'id' => 'vs-manage-posts',
-    'href' => 'https://shop.villagesoup.com/wp-admin/admin.php?page=manage-myBriefs',
+    'href' => get_site_url().'/wp-admin/admin.php?page=manage-myBriefs',
     'meta' => array('target' => '_blank')
   ));
   $admin_bar->add_menu( array(
     'parent' => 'vs-manage-posts',
     'title' => 'Briefs',
     'id' => 'manage-briefs',
-    'href' => 'https://shop.villagesoup.com/wp-admin/admin.php?page=manage-myBriefs',
+    'href' => get_site_url().'/wp-admin/admin.php?page=manage-myBriefs',
     'meta' => array(
       'title' => __('Briefs'),
       'target' => '_blank',
@@ -97,7 +97,7 @@ function vs_toolbar_manage_posts($admin_bar) {
     'parent' => 'vs-manage-posts',
     'title' => 'Offers',
     'id' => 'manage-offers',
-    'href' => 'https://shop.villagesoup.com/wp-admin/admin.php?page=manage-myOffers',
+    'href' => 'get_site_url()./wp-admin/admin.php?page=manage-myOffers',
     'meta' => array(
       'title' => __('Offers'),
       'target' => '_blank',
@@ -108,7 +108,7 @@ function vs_toolbar_manage_posts($admin_bar) {
     'parent' => 'vs-manage-posts',
     'title' => 'Real Estates',
     'id' => 'manage-real_estates',
-    'href' => 'https://shop.villagesoup.com/wp-admin/admin.php?page=manage-myRealEstates',
+    'href' => get_site_url().'/wp-admin/admin.php?page=manage-myRealEstates',
     'meta' => array(
       'title' => __('Real Estates'),
       'target' => '_blank',
